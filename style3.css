@@ -1,0 +1,255 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+#background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+}
+
+.clock-container {
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-weight: bold;
+    font-family: 'Arial';
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    color: hsla(0, 0%, 100%, 0.827);
+    background-color: transparent;
+}
+
+.animated-text {
+    font-size: 6em; /* Adjust font size as needed */
+}
+#date {
+    font-size: 2.5em; /* Adjust font size as needed */
+    margin-bottom: 10px; /* Add margin to separate date and timezone */
+    text-transform: uppercase; /* Convert text to uppercase */
+}
+
+#timezoneSelector label,
+#timezoneSelector select {
+    display: inline-block;
+    margin: 10px;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+    color: hsl(0, 0%, 12%);
+    transition: all 0.3s ease-in-out; /* Adding a smooth transition effect */
+}
+
+#timezoneSelector {
+    display: inline-block;
+    margin: 10px;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+    color: hsl(0, 0%, 12%);
+    position: relative;
+    cursor: pointer;
+    transition: color 0.5s ease-in-out;
+}
+
+#timezoneSelector label {
+    font-size: 1.2em;
+    margin-right: 10px;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+}
+
+#timezoneSelector select {
+    padding: 9px;
+    font-size: 1em;
+    border: 1px solid #999;
+    border-radius: 0px;
+    background-color: rgba(85, 85, 85, 0.981);/* Set the initial background color */
+    color: #000; /* Set the initial text color */
+    transition: background-color 0.5s ease-in-out;
+}
+
+#timezoneSelector:hover select {
+    background-color: rgba(85, 85, 85, 0.981); /* Bright shining red background color on hover */
+    color: rgb(229, 231, 226); /* Ensure text color is black on hover */
+}
+
+/* author: Bárbara Rodríguez */
+body {
+    margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+    background: linear-gradient(
+        315deg,
+        #e903bb 3%,
+        #327ac1 38%,
+        hsl(176, 64%, 46%) 68%,
+        #eb4040 98%
+    );
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: hsla(0, 0%, 100%, 0.258);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -4s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.15em;
+    animation: wave 20s linear reverse infinite;
+    opacity: 1;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
+/* author: Mark Boots */
+body {
+    height: 100vh;
+    margin: 0;
+    --x: calc(var(--posX, 0) * 1px);
+    --y: calc(var(--posY, 0) * 1px);
+    background-image: linear-gradient(115deg, rgb(211 255 215), rgb(0 0 0)),
+        radial-gradient(90% 100% at calc(50% + var(--x)) calc(0% + var(--y)), rgb(200 200 200), rgb(022 000 045)),
+        radial-gradient(100% 100% at calc(80% - var(--x)) calc(0% - var(--y)), rgb(250 255 000), rgb(036 000 000)),
+        radial-gradient(150% 210% at calc(100% + var(--x)) calc(0% + var(--y)), rgb(020 175 125), rgb(000 010 255)),
+        radial-gradient(100% 100% at calc(100% - var(--x)) calc(30% - var(--y)), rgb(255 077 000), rgb(000 200 255)),
+        linear-gradient(60deg, rgb(255 000 000), rgb(120 086 255));
+    background-blend-mode: overlay, overlay, difference, difference, difference, normal;
+}
+/* Styles for smaller screens */
+@media only screen and (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .column {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+.horizontal-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px; /* Adjust height as needed */
+    background-color: #8f8c8c;
+    padding: 0 40px;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+}
+
+
+
+.signin a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    border: 1px solid #fff;
+    border-radius: 0px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.signin a:hover {
+    background-color: #fff;
+    color: #333;
+}
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Define styles for the body */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+  
+  /* Center the grid container */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Style individual timer items */
+  .timer-item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+  }
+  
+ /* Media query for landscape mode on phones, tablets, and other devices */
+@media (max-width: 1024px) and (max-height: 768px) and (orientation: landscape) {
+    .grid-container {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+  }
+  
+  /* Media query for portrait mode on phones, tablets, and other devices */
+  @media (max-width: 768px) and (max-height: 1024px) and (orientation: portrait) {
+    .grid-container {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+  }
+  
+  

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="alarm.css">
+    <script defer src="alarm.js"></script>
+    <title>Timer</title>
+    <!-- Include the styles for the vertical menu within the head -->
+</head>
+
+<body>
+
+    <!-- Timer Section -->
+    <div class="timer-container">
+        <div class="clock" id="timer">00:00:00</div>
+        <button class="btn-hover color-1" onclick="openModal()">Set Timer</button>
+        <button class="btn-hover color-2" onclick="stopAlarm()">Stop Timer</button>
+        <button class="btn-hover color-3" onclick="chooseMp3File()">Choose Sound</button>
+<!-- MP3 File Input -->
+<input type="file" id="mp3-input" accept=".mp3" style="display: none">
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="input-group">
+                <label for="hours">Hours:</label>
+                <input type="number" id="HOURS" min="1" max="24" placeholder="">
+            </div>
+            <div class="input-group">
+                <label for="minutes">Minutes:</label>
+                <input type="number" id="MINUTES" min="1" max="60" placeholder="">
+            </div>
+            <div class="input-group">
+                <label for="seconds">Seconds:</label>
+                <input type="number" id="SECONDS" min="1" max="60" placeholder="">
+            </div>
+        </div>
+        <div class="timer-buttons">
+            <button class = "btn-hover color-4" onclick="setTimer()">Set Timer</button>
+            <button class = "btn-hover color-5" onclick="clearTimer()">Clear Timer</button>
+        </div>
+    </div>
+</div>
+
+    <input type="file" id="file-input" style="display:none" accept=".mp3">
+        <!-- Include the styles for the vertical menu within the head -->
+        <style>
+            .vertical-menu {
+                position: fixed;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 150px;
+                background-color: #333;
+                padding-top: 20px;
+                z-index: 999; /* Ensure the menu is on top */
+                font-family: 'Lato', sans-serif; /* Apply Lato font to the menu */
+            }
+    
+            .vertical-menu a {
+                padding: 10px;
+                text-decoration: none;
+                color: #818181;
+                display: block;
+                position: relative; /* Added for positioning pseudo-elements */
+            }
+            
+            .vertical-menu a:before,
+            .vertical-menu a:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 100%; /* Initially positioned outside the link */
+                width: 100%;
+                height: 100%;
+                background-color: #c8f7cf;
+                transition: right 0.3s; /* Transition for the right property */
+                z-index: -1; /* Ensure pseudo-elements are behind the link text */
+            }
+            
+            .vertical-menu a:hover:before,
+            .vertical-menu a:hover:after {
+                right: 0; /* Move the pseudo-elements to the left */
+            }
+            
+            .vertical-menu a:hover {
+                color: black;
+            }
+            
+            .vertical-menu a:hover:before,
+            .vertical-menu a:hover:after {
+                transition-delay: 0.1s; /* Delay the transition for pseudo-elements */
+            }
+            
+    
+        </style>
+    </head>
+    
+    <body>
+    
+        <!-- Vertical Menu Bar -->
+        <div class="vertical-menu">
+            <a href="worldclock.html">Clock</a>
+            <a href="todolist.html">To Do List</a>
+            <a href="stopwatch.html">Stopwatch</a>
+            <a href="alarm.html">Timer</a>
+            <a href="index.html">About Me</a>
+        </div>
+
+</body>
+
+</html>

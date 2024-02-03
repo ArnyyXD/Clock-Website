@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>About Me</title>
+</head>
+<style>
+    /* Add some styles for the vertical menu */
+    .vertical-menu {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 150px;
+        background-color: #333;
+        padding-top: 20px;
+        font-family: 'Lato', sans-serif; /* Apply Lato font to the menu */
+    }
+
+    .vertical-menu a {
+        padding: 10px;
+        text-decoration: none;
+        color: #818181;
+        display: block;
+        position: relative; /* Added for positioning pseudo-elements */
+    }
+    
+    .vertical-menu a:before,
+    .vertical-menu a:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 100%; /* Initially positioned outside the link */
+        width: 100%;
+        height: 100%;
+        background-color: #ddd;
+        transition: right 0.3s; /* Transition for the right property */
+        z-index: -1; /* Ensure pseudo-elements are behind the link text */
+    }
+    
+    .vertical-menu a:hover:before,
+    .vertical-menu a:hover:after {
+        right: 0; /* Move the pseudo-elements to the left */
+    }
+    
+    .vertical-menu a:hover {
+        color: black;
+    }
+    
+    .vertical-menu a:hover:before,
+    .vertical-menu a:hover:after {
+        transition-delay: 0.1s; /* Delay the transition for pseudo-elements */
+    }
+    
+</style>
+</head>
+
+<body>
+<!-- Vertical Menu Bar -->
+<div class="vertical-menu">
+    <a href="worldclock.html">Clock</a>
+    <a href="todolist.html">To Do List</a>
+    <a href="stopwatch.html">Stopwatch</a>
+    <a href="alarm.html">Timer</a>
+    <a href="index.html">About Me</a>
+</div>
+
+<audio autoplay loop style="display: none">
+    <source src="deepspace.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+<p class="centered-paragraph"> Hi, I'm Arnab Chakraborty, a first-year B.Tech student who is really passionate about web development. I have learned programming languages like C++ and Python and am currently into HTML, CSS, and JavaScript. I'm passionate about photography and even built my own photography website. Beyond coding, I'm an active member of the Google Developer Student Club (GDSS), where I collaborate with fellow students and programmers from different regions. Eager to broaden my knowledge, I'm looking forward to learning more programming languages, Learning SQL, and working on industry projects. I want to become a full-stack web developer, and I'm excited about the opportunities ahead.</p>
+<body>
+    <div id="universe"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.2/web-animations.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/polymer/3.4.1/polymer-element.js"></script>
+<ul>
+    
+    <li><a href="https://twitter.com/arnabch84117224"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+    <li><a href="mailto:arnabraj6@gmail.com"><i class="fab fa-google" aria-hidden="true"> </i></a></li>
+    <li><a href="https://www.youtube.com/channel/UCq1MRCFn1dZeqpVjw_sN3hQ"><i class="fab fa-youtube"
+                aria-hidden="true"></i></a></li>
+    <li><a href="https://www.instagram.com/_.arnyy._/"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+    <li><a href="https://www.linkedin.com/in/arnab-chakraborty-07451227b/"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+    </li>
+    <script src="https://kit.fontawesome.com/beb98df05a.js" crossorigin="anonymous"></script>
+</ul>
+    <script src="main.js"></script>
+</body>
+</html>

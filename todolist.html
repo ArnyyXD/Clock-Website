@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="todolist.css">
+    <title>To Do List</title>
+    <style>
+        /* Add some styles for the vertical menu */
+        .vertical-menu {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 150px;
+            background-color: #333;
+            padding-top: 20px;
+            font-family: 'Lato', sans-serif; /* Apply Lato font to the menu */
+        }
+
+        .vertical-menu a {
+            padding: 10px;
+            text-decoration: none;
+            color: #818181;
+            display: block;
+            position: relative; /* Added for positioning pseudo-elements */
+        }
+        
+        .vertical-menu a:before,
+        .vertical-menu a:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 100%; /* Initially positioned outside the link */
+            width: 100%;
+            height: 100%;
+            background-color: #e0c5fc;
+            transition: right 0.3s; /* Transition for the right property */
+            z-index: -1; /* Ensure pseudo-elements are behind the link text */
+        }
+        
+        .vertical-menu a:hover:before,
+        .vertical-menu a:hover:after {
+            right: 0; /* Move the pseudo-elements to the left */
+        }
+        
+        .vertical-menu a:hover {
+            color: black;
+        }
+        
+        .vertical-menu a:hover:before,
+        .vertical-menu a:hover:after {
+            transition-delay: 0.1s; /* Delay the transition for pseudo-elements */
+        }
+        
+    </style>
+</head>
+
+<body>
+     <!-- Vertical Menu Bar -->
+     <div class="vertical-menu">
+        <a href="worldclock.html">Clock</a>
+        <a href="todolist.html">To Do List</a>
+        <a href="stopwatch.html">Stopwatch</a>
+        <a href="alarm.html">Timer</a>
+        <a href="index.html">About Me</a>
+    </div>
+    <div class="app-container" id="taskList">
+        <h1 class="app-header">TO DO LIST</h1>
+        <div class="add-task">
+            <input type="text" autocomplete="off" placeholder="Add New Task" v-model="tasks.name" @keyup.enter="newItem"
+                class="task-input">
+            <input type="submit" value="" class="submit-task" @click="newItem" title="Add Task">
+        </div>
+        <ul class="task-list">
+            <li class="task-list-item" v-for="task in tasks">
+                <label class="task-list-item-label">
+                    <input type="checkbox">
+                    <span>{{task.name}}</span>
+                </label>
+                <span @click="delItem(task)" class="delete-btn" title="Delete Task">{{task.del}}</span>
+            </li>
+        </ul>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <script src="todolist.js"></script>
+</body>
+
+</html>

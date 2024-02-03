@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style1.css">
+    <title>Stopwatch</title>
+    <!-- Include the styles for the vertical menu within the head -->
+    <style>
+        .vertical-menu {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 150px;
+            background-color: #333;
+            padding-top: 20px;
+            z-index: 999; /* Ensure the menu is on top */
+            font-family: 'Lato', sans-serif; /* Apply Lato font to the menu */
+        }
+
+        .vertical-menu a {
+            padding: 10px;
+            text-decoration: none;
+            color: #818181;
+            display: block;
+            position: relative; /* Added for positioning pseudo-elements */
+        }
+        
+        .vertical-menu a:before,
+        .vertical-menu a:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 100%; /* Initially positioned outside the link */
+            width: 100%;
+            height: 100%;
+            background-color: #f9d1d1;
+            transition: right 0.3s; /* Transition for the right property */
+            z-index: -1; /* Ensure pseudo-elements are behind the link text */
+        }
+        
+        .vertical-menu a:hover:before,
+        .vertical-menu a:hover:after {
+            right: 0; /* Move the pseudo-elements to the left */
+        }
+        
+        .vertical-menu a:hover {
+            color: black;
+        }
+        
+        .vertical-menu a:hover:before,
+        .vertical-menu a:hover:after {
+            transition-delay: 0.1s; /* Delay the transition for pseudo-elements */
+        }
+        
+
+        /* Additional styles for the video and stopwatch container */
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1; /* Ensure the video is behind other elements */
+        }
+
+        .stopwatch-container {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 1; /* Ensure the stopwatch is above the video */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Vertical Menu Bar -->
+    <div class="vertical-menu">
+        <a href="worldclock.html">Clock</a>
+        <a href="todolist.html">To Do List</a>
+        <a href="stopwatch.html">Stopwatch</a>
+        <a href="alarm.html">Timer</a>
+        <a href="index.html">About Me</a>
+    </div>
+
+    <!-- Stopwatch Container -->
+    <div class="stopwatch-container">
+        <div id="stopwatch" class="animated-text">00:00:00</div>
+        <div class="stopwatch-buttons">
+            <button id="startButton"><img src="go.png" alt="Reset"></button>
+            <button id="resetButton"><img src="reset.png" alt="Reset"></button>
+            <button id="stopButton"><img src="stop.png" alt="Reset"></button>
+            <button id="pauseResumeButton"><img id="pauseResumeImage" src="resume.png" alt="Pause"></button>
+        </div>
+    </div>
+
+    <!-- Include the JavaScript file at the end of the body -->
+    <script defer src="stopwatch.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
